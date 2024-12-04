@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FileUploadForm from './components/FileUploadForm';
 import ResultsTable from './components/ResultsTable';
 import './App.css';
@@ -10,8 +10,10 @@ function App() {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  
   const handleFileChange = (file) => setFile(file);
 
+  
   const handleUpload = async () => {
     if (!file) {
       setError('Please select an HTML file to upload.');
@@ -23,8 +25,8 @@ function App() {
     formData.append('htmlFile', file);
 
     try {
-      setError('');
-      const response = await axios.post('http://localhost:3000/upload', formData, {
+      
+      const response = await axios.post('https://pluro-test-backend.onrender.com/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -39,10 +41,14 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    setError('')
+  }, [file])
+
   return (
     <div className="app">
       <div className="analyzer-container">
-        <h1>Accessibility Analyzer</h1>
+        <h1 className='title'>Accessibility Analyzer</h1>
         <FileUploadForm
           onFileChange={handleFileChange}
           onUpload={handleUpload}

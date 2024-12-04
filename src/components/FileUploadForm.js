@@ -11,9 +11,9 @@ function FileUploadForm({ onFileChange, onUpload, isLoading, error }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="file" accept=".html" onChange={handleChange} />
-            <button type="submit" disabled={isLoading}>
+        <form onSubmit={handleSubmit} className='form-container'>
+            <input type="file" accept=".html" onChange={handleChange} className='file-upload-input' />
+            <button type="submit" disabled={isLoading} className='file-upload-button' >
                 {isLoading ? <img src="./spinner.svg" alt="Loading..." /> : 'Upload and Analyze'}
             </button>
             {error && <p className="error">{error}</p>}

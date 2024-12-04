@@ -1,13 +1,13 @@
 import React from 'react';
 
 function ResultsTable({ results }) {
-    const { compliance_score, issues } = results;
+    const { complianceScore, issues } = results;
 
     return (
         <>
-            <h2>Compliance Score: {compliance_score}%</h2>
-            <div className="results-inner-container">
-                <table>
+            <h2 className='score-title'>Compliance Score: {complianceScore}%</h2>
+            {issues?.length >= 1 && <div className="results-inner-container">
+                <table className='result-table'>
                     <thead>
                         <tr>
                             <th>Types</th>
@@ -25,7 +25,7 @@ function ResultsTable({ results }) {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </div>}
         </>
     );
 }

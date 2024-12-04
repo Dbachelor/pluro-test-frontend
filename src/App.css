@@ -3,51 +3,48 @@
   text-align: center;
   min-height: 90vh;
   width: 100vw;
- overflow: hidden;
+  overflow: hidden;
 }
 
 .analyzer-container {
   margin: 20px auto;
   width: min(500px, 90%);
-  background-color: rgb(114, 199, 239);
+  background-color: rgb(7, 158, 228);
   padding: 20px;
 }
 
+.title {
+  color: #ccc;
+}
 
-.results{
+.results {
   width: min(1000px, 90%);
-    margin: 30px auto;
+  margin: 30px auto;
 
 }
 
-table{
+.results-inner-container {
   width: 100%;
+  overflow-x: scroll;
 }
 
-.results-inner-container{
-width: 100%;
-overflow-x: scroll;
-}
-
-
-table{
+.result-table {
   width: 1000px;
 }
 
-th, td{
+.result-table th,
+td {
   border: 2px solid #ccc !important;
-width: 33.3%;
+  width: 33.3%;
 }
 
-
-
-form {
+.form-container {
   margin: 20px;
   display: flex;
   flex-direction: column;
 }
 
-button {
+.file-upload-button {
   width: 100%;
   height: 40px;
   display: flex;
@@ -55,14 +52,17 @@ button {
   justify-content: center;
   font-size: 15px;
   font-weight: 600;
+  border: 1px solid #000;
+  cursor: pointer;
 }
 
-input {
+.file-upload-input {
   margin: 10px 0px;
   height: 100%;
   background: #ccc;
   width: 95%;
   padding: 10px;
+  border: 1px solid #000;
 }
 
 .error {
@@ -73,8 +73,6 @@ input {
   margin-top: 20px;
 }
 
-h2,
-h3 {
+.score-title {
   margin-top: 10px;
 }
-

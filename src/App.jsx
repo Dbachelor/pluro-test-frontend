@@ -41,6 +41,8 @@ function App() {
     }
   };
 
+
+  
   useEffect(() => {
     setError('')
   }, [file])

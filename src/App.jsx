@@ -33,6 +33,7 @@ function App() {
       if (response.status === 200) {
         setResult(response.data);
       }
+      return response
     } catch (err) {
       console.error(err);
       setError('Failed to analyze file.');
@@ -42,7 +43,7 @@ function App() {
   };
 
 
-  
+
   useEffect(() => {
     setError('')
   }, [file])
@@ -51,6 +52,7 @@ function App() {
     <div className="app">
       <div className="analyzer-container">
         <h1 className='title'>Accessibility Analyzer</h1>
+        <p>.html files only</p>
         <FileUploadForm
           onFileChange={handleFileChange}
           onUpload={handleUpload}

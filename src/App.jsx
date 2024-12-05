@@ -36,6 +36,7 @@ function App() {
     } catch (err) {
       console.error(err);
       setError('Failed to analyze file.');
+      setResult(null)
     } finally {
       setIsLoading(false);
     }

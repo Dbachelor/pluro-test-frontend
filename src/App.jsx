@@ -50,8 +50,8 @@ function App() {
   return (
     <div className="app">
       <div className="analyzer-container">
-        <h1 className='title'>Accessibility Analyzer</h1>
-        <p>.html files only</p>
+        <h1 className='title'>Accessibility Analyzer.</h1>
+        <h2 className='file-format-text'>.html files only.</h2>
         <FileUploadForm
           onFileChange={handleFileChange}
           onUpload={handleUpload}

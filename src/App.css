@@ -17,6 +17,11 @@
   color: #ccc;
 }
 
+.file-format-text{
+  margin: 0;
+  font-size: 18px;
+}
+
 .results {
   width: min(1000px, 90%);
   margin: 30px auto;

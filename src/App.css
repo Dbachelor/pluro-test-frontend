@@ -11,6 +11,7 @@
   width: min(500px, 90%);
   background-color: rgb(7, 158, 228);
   padding: 20px;
+  border-radius: 8px;
 }
 
 .title {
@@ -39,9 +40,12 @@
 
 .result-table th,
 td {
-  border: 2px solid #ccc !important;
+  border: 1px solid #ccc !important;
   width: 33.3%;
+  min-height: 36px !important;
+  padding: 10px;
 }
+
 
 .form-container {
   margin: 20px;
@@ -59,6 +63,7 @@ td {
   font-weight: 600;
   border: 1px solid #000;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .file-upload-input {
@@ -68,6 +73,7 @@ td {
   width: 95%;
   padding: 10px;
   border: 1px solid #000;
+  border-radius: 5px;
 }
 
 .error {

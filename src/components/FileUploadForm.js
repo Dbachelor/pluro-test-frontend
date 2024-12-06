@@ -15,6 +15,7 @@ function FileUploadForm({ onFileChange, onUpload, isLoading, error }) {
       <input
         type="file"
         accept=".html"
+        data-testid='textbox'
         onChange={handleChange}
         className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none"
       />

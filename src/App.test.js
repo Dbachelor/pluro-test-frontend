@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import axios from 'axios';
 import App from './App';
-const  axios  = require('axios');
 
 // Mock Axios
 jest.mock('axios');
@@ -15,7 +15,7 @@ describe('Accessibility Analyzer App', () => {
     render(<App />);
 
     // Check for input field
-    const fileInput = screen.getByRole('textbox', { hidden: true });
+    const fileInput = screen.getByTestId('textbox', { hidden: true });
     expect(fileInput).toBeInTheDocument();
 
     // Check for button
@@ -51,7 +51,7 @@ describe('Accessibility Analyzer App', () => {
 
     render(<App />);
 
-    const fileInput = screen.getByRole('textbox', { hidden: true });
+    const fileInput = screen.getByTestId('textbox', { hidden: true });
     const button = screen.getByRole('button', { name: /upload and analyze/i });
 
     // Simulate file selection
@@ -62,15 +62,15 @@ describe('Accessibility Analyzer App', () => {
     fireEvent.click(button);
 
     await waitFor(() => {
-      expect(screen.queryBy(/Compliance Score: 85%/i)).toBeInTheDocument();
+      expect(screen.getByText(/Compliance Score: 85%/i)).toBeInTheDocument();
     });
 
     await waitFor(() => {
-      expect(screen.queryBy(/Missing alt attribute/i)).toBeInTheDocument();
+      expect(screen.getByText(/Missing alt attribute/i)).toBeInTheDocument();
     });
 
     await waitFor(() => {
-      expect(screen.queryBy(/Skipped heading level/i)).toBeInTheDocument();
+      expect(screen.getByText(/Skipped heading level/i)).toBeInTheDocument();
     });
   });
 
@@ -79,7 +79,7 @@ describe('Accessibility Analyzer App', () => {
 
     render(<App />);
 
-    const fileInput = screen.getByRole('textbox', { hidden: true });
+    const fileInput = screen.getByTestId('textbox', { hidden: true });
     const button = screen.getByRole('button', { name: /upload and analyze/i });
 
     // Simulate file selection
@@ -90,7 +90,7 @@ describe('Accessibility Analyzer App', () => {
     fireEvent.click(button);
 
     await waitFor(() => {
-      expect(screen.queryBy(/Failed to analyze file./i)).toBeInTheDocument();
+      expect(screen.getByText(/Failed to analyze file./i)).toBeInTheDocument();
     });
   });
 });

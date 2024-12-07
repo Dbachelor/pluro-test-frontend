@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import FileUploadForm from './components/FileUploadForm';
 import ResultsTable from './components/ResultsTable';
 import axios from 'axios';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [file, setFile] = useState(null);
@@ -60,6 +61,7 @@ function App() {
           <ResultsTable results={result} />
         </div>
       )}
+      <ScrollToTop/>
     </div>
   );
 }
